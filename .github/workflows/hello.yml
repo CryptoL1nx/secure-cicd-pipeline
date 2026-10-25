@@ -1,0 +1,19 @@
+name: Hello pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Afficher le contenu du repo
+        run: ls -la
+
+      - name: Dire bonjour
+        run: echo "La pipeline fonctionne"
